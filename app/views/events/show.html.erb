@@ -9,3 +9,18 @@
   <p><span>date: </span> <%= @event.date %> </p>
   <p><span>host: </span> <%= @event.creator.name %> </p>
 </div>
+
+<% if @event.attendees.any? %>
+<div class="invited-list">
+ <h3>Attendee list</h3>
+  <ul>
+    <% @event.attendees.each do |attendee|%>
+
+    <li> <%= attendee.name %> </li>
+
+    <% end %>
+
+  </ul>
+
+</div>
+<% end %>
