@@ -1,13 +1,13 @@
 <h2>Create event</h2>
 
-<%= form_with(model: @event, class: "form form-event") do |e| %>
+<%= form_for @event, class: "form form-event" do |e| %>
   <div class="">
     <%= e.label :name %>
     <%= e.text_field :name %>
   </div>
   <div class="">
     <%= e.label :location %>
-    <%= e.text_area :date %>
+    <%= e.text_field :location %>
   </div>
   <div class="">
     <%= e.label :date %>

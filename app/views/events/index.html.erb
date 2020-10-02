@@ -1,1 +1,14 @@
-INDEXXXXXXXXXXXXXXXXXXXXX
+<div class="all-events">
+
+  <ul>
+    <% if @events.any? %>
+      <% @events.each do |event| %>
+        <li>
+          <p><span>Event name: </span> <%= link_to event.name, event_path(event) %> </p>
+          <p><span>Date: </span> <%= event.date%> </p>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+
+</div>
