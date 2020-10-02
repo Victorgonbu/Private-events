@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <% if user_logged_in? %>
+  <div class="navbar-item">
+    <%= link_to "Log out", sessions_destroy_path %>
+  </div>
+  <% else %>
+  <div class="navbar-item">
+    <%= link_to "Log in", new_session_path %>
+  </div>
+  <div class="navbar-item">
+    <%= link_to "Sign up", new_user_path %>
+  </div>
+  <% end %>
+</nav>

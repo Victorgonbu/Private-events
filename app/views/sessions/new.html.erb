@@ -1,0 +1,12 @@
+<h2>Log in</h2>
+
+<%= form_tag("/sessions", method: "post")  do %>
+
+  <div class="">
+    <%= label_tag(:name, "Name") %>
+    <%= text_field_tag(:name) %>
+  </div>
+  <div class="">
+    <%= submit_tag ("log in") %>
+  </div>
+<% end %>

@@ -1,0 +1,16 @@
+<h3>Sign up today</h3>
+
+<%= form_with(model: @user, class: "form") do |u|%>
+  <div class="">
+    <%= u.label :name %>
+    <%= u.text_field :name %>
+  </div>
+  <div class="">
+    <%= u.label :email %>
+    <%= u.text_field :email %>
+  </div>
+  <div class="">
+    <%= u.submit "Create account" %>
+  </div>
+
+<% end %>
