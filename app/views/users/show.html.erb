@@ -1,2 +1,27 @@
-WHAT DOES THE PANITA SAYS
-USER SHOW
+<% if user_logged_in? %>
+<div class="user-info">
+  <div class="info">
+    <div class="user-name">
+      <%= current_user.name %>
+    </div>
+    <div class="user-email">
+      <%= current_user.email %>
+    </div>
+
+  </div>
+</div>
+<% end %>
+
+<div class="host">
+  <% if current_user.events.any? %>
+    <ul class = "event-list">
+      <% current_user.events.each do |event| %>
+        <li class = "event">
+          <p class = "event-field"><span>Event name: </span> <%= event.name %> </p>
+          <p class = "event-field"><span>Event location: </span> <%= event.location %> </p>
+          <p class = "event-field"><span>Event date: </span> <%= event.date %> </p>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

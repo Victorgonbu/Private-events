@@ -1,6 +1,9 @@
 <nav class="navbar">
   <% if user_logged_in? %>
   <div class="navbar-item">
+    <%= link_to current_user.name, current_user %>
+  </div>
+  <div class="navbar-item">
     <%= link_to "Log out", sessions_destroy_path %>
   </div>
   <% else %>

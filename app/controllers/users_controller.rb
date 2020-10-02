@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:alert] = "User #{@user.name} created successfully"
-      redirect_to @user
+      redirect_to events_path
     else
       flash.now[:alert] = "Invalid fields"
       render :new
