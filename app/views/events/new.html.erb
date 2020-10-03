@@ -1,19 +1,22 @@
-<h2>Create event</h2>
+<div class="event">
+  <h1>Create event</h1>
 
-<%= form_for @event, class: "form form-event" do |e| %>
-  <div class="">
-    <%= e.label :name %>
-    <%= e.text_field :name %>
-  </div>
-  <div class="">
-    <%= e.label :location %>
-    <%= e.text_field :location %>
-  </div>
-  <div class="">
-    <%= e.label :date %>
-    <%= e.date_field :date %>
-  </div>
-  <div class="">
-    <%= e.submit "Create event" %>
-  </div>
-<% end %>
+  <%= form_for @event, class: "form form-event" do |e| %>
+    <div class="">
+      <%= e.label :name %>
+      <%= e.text_field :name %>
+    </div>
+    <div class="">
+      <%= e.label :location %>
+      <%= e.text_field :location %>
+    </div>
+    <div class="">
+      <%= e.label :date %>
+      <%= e.date_field :date %>
+    </div>
+    <div class="">
+      <%= e.submit "Create event" %>
+    </div>
+  <% end %>
+
+</div>

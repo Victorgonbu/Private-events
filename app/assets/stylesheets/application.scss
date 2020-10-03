@@ -1,0 +1,136 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+ body {
+   margin: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+ }
+
+ a {
+   text-decoration: none;
+ }
+
+.navbar {
+
+  a {
+    color: white;
+    transition: color 100ms;
+    &:hover {
+      color: #534439;
+
+    }
+  }
+  background: #BAA89B;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7em 1em;
+
+  .navbar-item {
+    display: flex;
+
+
+
+    .item:first-child {
+      margin-right: 1em;
+      border-bottom: 1px solid #EF9648;
+      a {
+        display: block;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #EF9648;
+      }
+    }
+    .item {
+      display: flex;
+      align-items: center;
+      padding: 0 1em;
+      border: 1px solid #BAA89B;
+      border-radius: 5px;
+      transition: border 100ms;
+
+    }
+    .item:hover {
+      border: 2px solid #BAA89B;
+    }
+   .home {
+     a {
+       color: #534439;
+       font-weight: 500;
+     }
+     font-size: 1.5em;
+     transition: none;
+     &:hover {
+       border: 0;
+     }
+
+   }
+  }
+}
+
+.all-events {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+
+
+  .event-item {
+    width: 49%;
+    h1 {
+      font-size: 1.6em;
+      text-align: center;
+      padding: 1em 0;
+    }
+    li {
+      position: relative;
+      border: 1px solid #DFE0DF;
+      border-top: 0;
+      margin: 1em 0;
+      transition: border 200ms;
+      &:hover {
+        border-top: 1px solid #EF9648;
+      }
+      .arrow {
+        position: absolute;
+        bottom: 1em;
+        right: 0.5em;
+        font-size: 1em;
+        color: #534439;
+        i:hover {
+          color: #EF9648;
+        }
+      }
+      p {
+        padding: 0.8em 0.5em;
+        color: 	#404040;
+        font-size: 1.2em;
+        span {
+          font-size: 0.9em;
+          text-transform: capitalize;
+          color: #696969;
+        }
+      }
+    }
+  }
+
+}
