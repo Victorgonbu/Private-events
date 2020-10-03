@@ -1,14 +1,27 @@
-<div class="all-events">
+  <div class="all-events">
 
-  <ul>
-    <% if @events.any? %>
-      <% @events.each do |event| %>
-        <li>
-          <p><span>Event name: </span> <%= link_to event.name, event_path(event) %> </p>
-          <p><span>Date: </span> <%= event.date%> </p>
-        </li>
+
+      <% if @events.any? %>
+        <% Event.upcomming.each do |event| %>
+        <h1>Upcomming Events</h1>
+        <ul class="events-index">
+          <li>
+            <p><span>Event name: </span> <%= link_to event.name, event_path(event) %> </p>
+            <p><span>Date: </span> <%= event.date%> </p>
+          </li>
+        </ul>
+
+        <% end %>
+        <% Event.past.each do |event| %>
+        <h1>Past Events</h1>
+        <ul class="event-index">
+          <li>
+            <p><span>Event name: </span> <%= link_to event.name, event_path(event) %> </p>
+            <p><span>Date: </span> <%= event.date%> </p>
+          </li>
+        </ul>
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
 
-</div>
+
+  </div>

@@ -12,8 +12,10 @@
 </div>
 <% end %>
 
-<div class="host">
+
   <% if current_user.events.any? %>
+  <div class="host">
+    <h1>Hosted Events</h1>
     <ul class = "event-list">
       <% current_user.events.each do |event| %>
         <li class = "event">
@@ -23,8 +25,9 @@
         </li>
       <% end %>
     </ul>
+    </div>
   <% end %>
-</div>
+
 
 <% if current_user.attended_events.any? %>
 <div class="attending">
