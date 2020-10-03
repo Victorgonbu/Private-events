@@ -1,26 +1,32 @@
 
+<div class="all-events">
+  <div class="event-item">
+    <h1>
+    <%= @event.name %>
+    </h1>
 
-<h2 class="event-title">
-<%= @event.name %>
-</h2>
+    <ul class="event-details">
+      <li>
+        <p><span>Location: </span> <%= @event.location %></p>
+        <p><span>date: </span> <%= @event.date %> </p>
+        <p><span>host: </span> <%= @event.creator.name %> </p>
+      </li>
+    </ul>
+  </div>
 
-<div class="event-details">
-  <p><span>Location: </span> <%= @event.location %></p>
-  <p><span>date: </span> <%= @event.date %> </p>
-  <p><span>host: </span> <%= @event.creator.name %> </p>
+  <% if @event.attendees.any? %>
+  <div class="event-item">
+   <h3>Attendee list</h3>
+    <ul>
+      <% @event.attendees.each do |attendee|%>
+
+      <li> <%= attendee.name %> </li>
+
+      <% end %>
+
+    </ul>
+
+  </div>
+  <% end %>
+
 </div>
-
-<% if @event.attendees.any? %>
-<div class="invited-list">
- <h3>Attendee list</h3>
-  <ul>
-    <% @event.attendees.each do |attendee|%>
-
-    <li> <%= attendee.name %> </li>
-
-    <% end %>
-
-  </ul>
-
-</div>
-<% end %>

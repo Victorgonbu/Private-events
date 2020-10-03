@@ -1,34 +1,42 @@
   <% if current_user.events.any? %>
-  <div class="host">
-    <h1>Hosted Events</h1>
-    <ul class = "event-list">
-      <% current_user.events.each do |event| %>
-        <li class = "event">
-          <p class = "event-field"><span>Event name: </span> <%= event.name %> </p>
-          <p class = "event-field"><span>Event location: </span> <%= event.location %> </p>
-          <p class = "event-field"><span>Event date: </span> <%= event.date %> </p>
-        </li>
-      <% end %>
-    </ul>
+  <div class="all-events host">
+    <div class="event-item">
+      <h1>Hosted Events</h1>
+      <ul class = "event-list">
+        <% current_user.events.each do |event| %>
+          <li>
+            <p>Event: <span> <%= event.name %> </span></p>
+            <p>Location: <span> <%= event.location %> </span></p>
+            <p>Date: <span> <%= event.date %> </span></p>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+
     </div>
   <% end %>
 
 
 <% if current_user.attended_events.any? %>
-<div class="attending">
-  <div class="">
-    <h3>Upcomming Events</h3>
+<div class="all-events">
+  <div class="event-item">
+    <h1>Upcomming Events</h1>
     <ul>
       <% current_user.upcomming_events.each do |atevent|%>
-      <li> <%= link_to atevent.name,  event_path(atevent)%> </li>
+        <li>
+          <p class="event-name"> <%= link_to atevent.name,  event_path(atevent)%> </p>
+        </li>
       <% end %>
     </ul>
   </div>
-  <div class="">
-    <h3>Previous Attended Events</h3>
+  <div class="event-item">
+    <h1>Previous Attended Events</h1>
     <ul>
      <% current_user.prev_events.each do |atevent| %>
-     <li> <%= link_to atevent.name,  event_path(atevent)%> </li>
+     <li>
+       <p class="event-name"><%= link_to atevent.name,  event_path(atevent)%> </p>
+     </li>
      <% end %>
     </ul>
   </div>

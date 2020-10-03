@@ -100,6 +100,7 @@
       font-size: 1.6em;
       text-align: center;
       padding: 1em 0;
+      text-transform: capitalize;
     }
     li {
       position: relative;
@@ -146,7 +147,7 @@
 
     padding: 1em;
   }
-  .form {
+  form {
 
     padding: 1em;
 
@@ -165,7 +166,6 @@
         border-radius: 5px;
         border: 2px solid white;
         border-bottom: 2px solid #c2712b;
-        border-top: 2px solid #c2712b;
       }
     }
     label {
@@ -175,4 +175,16 @@
       padding: 7px 10px;
     }
   }
+}
+
+.event-name {
+  a {
+    color: #404040;
+  }
+  text-transform: capitalize;
+}
+
+.host {
+  justify-content: center;
+
 }
