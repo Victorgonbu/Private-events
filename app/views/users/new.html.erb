@@ -1,16 +1,19 @@
-<h3>Sign up today</h3>
+<div class="form-wrap">
 
-<%= form_with(model: @user, class: "form") do |u|%>
-  <div class="">
-    <%= u.label :name %>
-    <%= u.text_field :name %>
-  </div>
-  <div class="">
-    <%= u.label :email %>
-    <%= u.text_field :email %>
-  </div>
-  <div class="">
-    <%= u.submit "Create account" %>
-  </div>
+  <h1>Sign up</h1>
 
-<% end %>
+  <%= form_with(model: @user, class: "form") do |u|%>
+    <div class="field">
+      <%= u.label :name %>
+      <%= u.text_field :name %>
+    </div>
+    <div class="field">
+      <%= u.label :email %>
+      <%= u.text_field :email %>
+    </div>
+    <div class="field">
+      <%= u.submit "Create account", class: "submit" %>
+    </div>
+
+  <% end %>
+</div>
