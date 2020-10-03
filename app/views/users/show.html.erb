@@ -28,12 +28,24 @@
 
 <% if current_user.attended_events.any? %>
 <div class="attending">
-  <h3>Attending events</h3>
-  <ul>
-    <% current_user.attended_events.each do |atevent|%>
-    <li> <%= link_to atevent.name,  event_path(atevent)%> </li>
-    <% end %>
-  </ul>
+  <div class="">
+    <h3>Upcomming Events</h3>
+    <ul>
+      <% current_user.upcomming_events.each do |atevent|%>
+      <li> <%= link_to atevent.name,  event_path(atevent)%> </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="">
+    <h3>Previous Attended Events</h3>
+    <ul>
+     <% current_user.prev_events.each do |atevent| %>
+     <li> <%= link_to atevent.name,  event_path(atevent)%> </li>
+     <% end %>
+    </ul>
+  </div>
+
+
 </div>
 
 <% end %>
