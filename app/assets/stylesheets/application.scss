@@ -105,7 +105,7 @@
     li {
       position: relative;
       border: 1px solid #DFE0DF;
-      border-top: 0;
+      border-top: 1px solid white;
       margin: 1em 0;
       transition: border 200ms;
       &:hover {
@@ -212,9 +212,25 @@
 }
 
 .invitation {
-
-  border: 1px solid black;
+  padding-top: 0;
   width: 50%;
   text-align: center;
+  h1 {
+    padding-top: 0;
+  }
 
+}
+
+
+.all-events {
+  .event-item {
+    ul{
+      li {
+        .arrow {
+          bottom: 0.4em;
+      }
+
+      }
+    }
+  }
 }

@@ -28,7 +28,10 @@
     <ul>
       <% current_user.upcomming_events.each do |atevent|%>
         <li>
-          <p class="event-name"> <%= link_to atevent.name,  event_path(atevent)%> </p>
+          <p class="event-name"> <%= atevent.name %> </p>
+          <%= link_to event_path(atevent) do %>
+          <p class="arrow"><span>Details</span> <i class="fas fa-caret-right"></i></p>
+          <% end %>
         </li>
       <% end %>
     </ul>
@@ -38,7 +41,10 @@
     <ul>
      <% current_user.prev_events.each do |atevent| %>
      <li>
-       <p class="event-name"><%= link_to atevent.name,  event_path(atevent)%> </p>
+       <p class="event-name"><%= atevent.name %> </p>
+       <%= link_to event_path(atevent) do %>
+       <p class="arrow"><span>Details</span> <i class="fas fa-caret-right"></i></p>
+       <% end %>
      </li>
      <% end %>
     </ul>

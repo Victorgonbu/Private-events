@@ -1,15 +1,14 @@
-<div class="invitation">
+<div class="invitation form-wrap">
 
   <h1>Invite</h1>
 
   <%= form_tag("/invitations/create", method: :post) do %>
     <div class="field">
-      <%= label_tag(:name) %>
-      <%= text_field_tag(:name) %>
+      <%= text_field_tag :name, nil, placeholder: "Gest name" %>
     </div>
 
     <div class="field">
-      <%= submit_tag("Invite") %>
+      <%= submit_tag "Invite", class: "submit" %>
     </div>
 
   <% end %>
