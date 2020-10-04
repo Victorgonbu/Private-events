@@ -188,3 +188,33 @@
   justify-content: center;
 
 }
+
+.event-item {
+  .attendee-title {
+    color: #EF9648;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+  .attendee-list {
+    .attendee {
+      margin: 0;
+      padding: 0.5em 0.2em;
+      border-left: 0;
+      transition: background 150ms, padding 200ms;
+      &:hover {
+        background: #fdf5e6;
+        padding: .5em;
+        border-top: 1px solid #eae6ca;
+      }
+    }
+  }
+
+}
+
+.invitation {
+
+  border: 1px solid black;
+  width: 50%;
+  text-align: center;
+
+}

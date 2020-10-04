@@ -16,17 +16,27 @@
 
   <% if @event.attendees.any? %>
   <div class="event-item">
-   <h3>Attendee list</h3>
-    <ul>
+   <h2 class="attendee-title">Attendee list</h2>
+    <ul class="attendee-list">
       <% @event.attendees.each do |attendee|%>
 
-      <li> <%= attendee.name %> </li>
+      <li class="attendee"> <%= attendee.name %> </li>
 
       <% end %>
 
     </ul>
 
   </div>
+  <% end %>
+
+</div>
+
+<div class="Invitations">
+
+  <% if @event.creator == current_user %>
+
+  <%= render "invitations/new", :locals => {:item => @event} %>
+
   <% end %>
 
 </div>
