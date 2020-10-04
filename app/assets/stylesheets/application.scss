@@ -92,7 +92,21 @@
   display: flex;
   justify-content: space-between;
   padding: 2em;
+ position: relative;
 
+  .back {
+    position: absolute;
+    top: 2em;
+    left: 1.5em;
+    font-size: 1.5em;
+    i {
+      color: black;
+      transition: color 200ms;
+      &:hover {
+        color: #EF9648;
+      }
+    }
+  }
 
   .event-item {
     width: 49%;

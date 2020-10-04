@@ -1,5 +1,10 @@
 
 <div class="all-events">
+  <div class="back">
+    <%= link_to user_path(current_user) do %>
+      <p><i class="fas fa-arrow-left"></i></p>
+    <% end %>
+  </div>
   <div class="event-item">
     <h1>
     <%= @event.name %>
