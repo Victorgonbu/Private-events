@@ -162,11 +162,12 @@
     padding: 1em;
   }
   form {
-
+    width: 20%;
     padding: 1em;
 
     .field {
       padding: 0.5em 0;
+
     }
     .submit {
       width: 100%;
@@ -186,7 +187,8 @@
       display: block;
     }
     input {
-      padding: 7px 10px;
+      padding: 7px 4px;
+      width: calc(100% - 1em)
     }
   }
 }
@@ -264,6 +266,15 @@
 }
 
 .field_with_errors {
-  border: 2px solid red;
-  background-color: red;
+  input {
+    border: 1px solid #C84D4F;
+  }
+
+}
+
+.errors {
+  p {
+    font-size: .8em;
+    padding: .5em 0;
+  }
 }

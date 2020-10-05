@@ -2,7 +2,15 @@
 
   <h1>Sign up</h1>
 
-  <%= form_with(model: @user, class: "form") do |u|%>
+
+  <%= form_with model: @user, local: true, class: "form" do |u|%>
+    <% if @user.errors.any? %>
+      <div class="errors">
+        <% @user.errors.full_messages.each do |error| %>
+         <p> <%= error %></p>
+        <% end %>
+      </div>
+    <% end %>
     <div class="field">
       <%= u.label :name %>
       <%= u.text_field :name %>
