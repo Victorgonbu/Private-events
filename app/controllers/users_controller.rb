@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  include UsersHelper
+  include ApplicationHelper
+  before_action :not_logged
+
   def new
     @user = User.new
   end
@@ -21,5 +23,11 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :email)
+  end
+  def not_logged
+    if user_logged_in?
+      flash[:alert] = "Already logged in"
+      redirect_to root_path
+    end
   end
 end

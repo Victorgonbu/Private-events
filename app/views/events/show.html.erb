@@ -1,10 +1,13 @@
 
 <div class="all-events">
+  <% if user_logged_in? %>
   <div class="back">
     <%= link_to user_path(current_user) do %>
       <p><i class="fas fa-arrow-left"></i></p>
     <% end %>
   </div>
+  <% end %>
+
   <div class="event-item">
     <h1>
     <%= @event.name %>
