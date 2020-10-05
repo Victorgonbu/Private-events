@@ -42,10 +42,6 @@
 
 <div class="Invitations">
 
-  <% if @event.creator == current_user %>
-
-  <%= render "invitations/new", :locals => {:item => @event} %>
-
-  <% end %>
+<%= owner_invite %>
 
 </div>
