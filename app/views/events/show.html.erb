@@ -22,9 +22,10 @@
     </ul>
   </div>
 
-  <% if @event.attendees.any? %>
+ <% if @event.attendees.any? %>
   <div class="event-item">
    <h2 class="attendee-title">Attendee list</h2>
+
     <ul class="attendee-list">
       <% @event.attendees.each do |attendee|%>
 

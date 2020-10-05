@@ -26,7 +26,7 @@
   <div class="event-item">
     <h1>Upcomming Events</h1>
     <ul>
-      <% current_user.upcomming_events.each do |atevent|%>
+      <% @upcomming_events.each do |atevent|%>
         <li>
           <p class="event-name"> <%= atevent.name %> </p>
           <%= link_to event_path(atevent) do %>
@@ -39,7 +39,7 @@
   <div class="event-item">
     <h1>Previous Attended Events</h1>
     <ul>
-     <% current_user.prev_events.each do |atevent| %>
+     <% @prev_events.each do |atevent| %>
      <li>
        <p class="event-name"><%= atevent.name %> </p>
        <%= link_to event_path(atevent) do %>

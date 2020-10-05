@@ -248,3 +248,22 @@
     }
   }
 }
+
+.alert, .notice {
+  text-align: center;
+  padding: 0.2em 0;
+  color: white;
+}
+
+.notice {
+  background: #90DD99;
+}
+
+.alert {
+  background: #C84D4F;
+}
+
+.field_with_errors {
+  border: 2px solid red;
+  background-color: red;
+}

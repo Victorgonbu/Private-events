@@ -5,7 +5,7 @@
             <h1>Upcomming Events</h1>
 
             <ul class="event-index">
-              <% Event.upcomming.each do |event| %>
+              <% @upcomming_events.each do |event| %>
                 <li>
                   <p>Event: <span> <%= event.name %> </span></p>
                   <p>Date: <span> <%= event.date%> </span></p>
@@ -22,7 +22,7 @@
 
             <h1>Past Events</h1>
             <ul class="event-index">
-              <% Event.past.each do |event| %>
+              <% @prev_events.each do |event| %>
               <li>
                 <p>Event: <span> <%= event.name %> </span></p>
                 <p>Date: <span> <%= event.date%> </span></p>

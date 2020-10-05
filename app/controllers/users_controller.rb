@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   include ApplicationHelper
-  before_action :not_logged
+  before_action :not_logged, except: [:show]
 
   def new
     @user = User.new
@@ -18,6 +18,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @upcomming_events = current_user.upcomming_events
+    @prev_events = current_user.prev_events
   end
 
   private

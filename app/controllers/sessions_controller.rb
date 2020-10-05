@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   def new
-
   end
 
   def create
@@ -10,7 +9,7 @@ class SessionsController < ApplicationController
       redirect_to root_path, notice: "Logged in!"
     else
 
-      flash.now[:alert] = "Email or password is invalid"
+      flash.now[:alert] = "Invalid name"
       render :new
     end
   end
