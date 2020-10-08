@@ -1,18 +1,31 @@
-example_id                              | status | run_time        |
---------------------------------------- | ------ | --------------- |
-./spec/models/event_spec.rb[1:1:1]      | passed | 0.00258 seconds |
-./spec/models/event_spec.rb[1:1:2]      | passed | 0.00233 seconds |
-./spec/models/event_spec.rb[1:1:3]      | passed | 0.01448 seconds |
-./spec/models/event_spec.rb[1:2:1]      | passed | 0.0351 seconds  |
-./spec/models/event_spec.rb[1:3:1]      | passed | 0.00831 seconds |
-./spec/models/invitation_spec.rb[1:1:1] | passed | 0.00218 seconds |
-./spec/models/invitation_spec.rb[1:1:2] | passed | 0.00172 seconds |
-./spec/models/user_spec.rb[1:1:1]       | passed | 0.00176 seconds |
-./spec/models/user_spec.rb[1:1:2]       | passed | 0.00268 seconds |
-./spec/models/user_spec.rb[1:1:3]       | passed | 0.00187 seconds |
-./spec/models/user_spec.rb[1:2:1:1]     | passed | 0.00583 seconds |
-./spec/models/user_spec.rb[1:2:1:2]     | passed | 0.00912 seconds |
-./spec/models/user_spec.rb[1:2:2:1]     | passed | 0.00475 seconds |
-./spec/models/user_spec.rb[1:2:2:2]     | passed | 0.00958 seconds |
-./spec/models/user_spec.rb[1:3:1]       | passed | 0.02092 seconds |
-./spec/models/user_spec.rb[1:4:1]       | passed | 0.01206 seconds |
+example_id                                 | status | run_time        |
+------------------------------------------ | ------ | --------------- |
+./spec/features/events_spec.rb[1:1:1]      | passed | 0.02181 seconds |
+./spec/features/events_spec.rb[1:2:1:1]    | passed | 0.07755 seconds |
+./spec/features/events_spec.rb[1:2:2:1]    | passed | 0.0143 seconds  |
+./spec/features/events_spec.rb[1:3:1:1]    | passed | 0.10319 seconds |
+./spec/features/events_spec.rb[1:3:1:2]    | passed | 0.09445 seconds |
+./spec/features/events_spec.rb[1:3:2:1]    | passed | 0.2792 seconds  |
+./spec/features/invitations_spec.rb[1:1:1] | passed | 0.10545 seconds |
+./spec/features/invitations_spec.rb[1:1:2] | passed | 0.10383 seconds |
+./spec/features/sessions_spec.rb[1:1:1]    | passed | 0.05615 seconds |
+./spec/features/sessions_spec.rb[1:1:2]    | passed | 0.02954 seconds |
+./spec/features/sessions_spec.rb[1:2:1]    | passed | 0.07549 seconds |
+./spec/features/users_spec.rb[1:1:1]       | passed | 0.03389 seconds |
+./spec/features/users_spec.rb[1:2:1]       | passed | 0.0807 seconds  |
+./spec/models/event_spec.rb[1:1:1]         | passed | 0.00217 seconds |
+./spec/models/event_spec.rb[1:1:2]         | passed | 0.00213 seconds |
+./spec/models/event_spec.rb[1:1:3]         | passed | 0.00207 seconds |
+./spec/models/event_spec.rb[1:2:1]         | passed | 0.00815 seconds |
+./spec/models/event_spec.rb[1:3:1]         | passed | 0.00757 seconds |
+./spec/models/invitation_spec.rb[1:1:1]    | passed | 0.00189 seconds |
+./spec/models/invitation_spec.rb[1:1:2]    | passed | 0.00232 seconds |
+./spec/models/user_spec.rb[1:1:1]          | passed | 0.00244 seconds |
+./spec/models/user_spec.rb[1:1:2]          | passed | 0.0024 seconds  |
+./spec/models/user_spec.rb[1:1:3]          | passed | 0.00236 seconds |
+./spec/models/user_spec.rb[1:2:1:1]        | passed | 0.00774 seconds |
+./spec/models/user_spec.rb[1:2:1:2]        | passed | 0.00959 seconds |
+./spec/models/user_spec.rb[1:2:2:1]        | passed | 0.00513 seconds |
+./spec/models/user_spec.rb[1:2:2:2]        | passed | 0.01056 seconds |
+./spec/models/user_spec.rb[1:3:1]          | passed | 0.01504 seconds |
+./spec/models/user_spec.rb[1:4:1]          | passed | 0.05531 seconds |

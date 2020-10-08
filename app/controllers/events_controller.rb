@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   include ApplicationHelper
-  before_action :require_login, except: [:index]
+  before_action :require_login, except: [:index, :show]
   def new
     @event =  Event.new
   end
