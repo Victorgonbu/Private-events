@@ -1,22 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe 'Event Requests' do
-  let(:user_params) { {
-    user: {
-      name: 'victor',
-      email: 'victor@victor.com'
+  let(:user_params) do
+    {
+      user: {
+        name: 'victor',
+        email: 'victor@victor.com'
+      }
     }
-  }
-  }
+  end
   let(:sign_up_and_log) do
     name_params = {
       name: 'victor'
     }
-    post '/users', :params => user_params
-    post '/sessions', :params => name_params
+    post '/users', params: user_params
+    post '/sessions', params: name_params
   end
 
-  let(:event_params) {
+  let(:event_params) do
     {
       event: {
         name: 'event',
@@ -25,7 +26,7 @@ RSpec.describe 'Event Requests' do
         creator_id: User.first.id
       }
     }
-  }
+  end
   describe 'GET /new' do
     it 'returns status message and correct body response' do
       sign_up_and_log
@@ -41,15 +42,14 @@ RSpec.describe 'Event Requests' do
   describe 'POST /create' do
     it 'create an event with valid attributes and redirect to root url' do
       sign_up_and_log
-      post '/events', :params => event_params
+      post '/events', params: event_params
       expect(response).to have_http_status(302)
-
     end
   end
   describe 'GET index' do
     it 'returns all the events created for the users' do
       sign_up_and_log
-      post '/events', :params => event_params
+      post '/events', params: event_params
       get('/events')
       expect(response.body).to include('event')
     end

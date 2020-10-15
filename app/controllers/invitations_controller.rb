@@ -15,12 +15,13 @@ class InvitationsController < ApplicationController
       redirect_to event_path(event_id), notice: "#{user.name} was invited!"
 
     else
-      redirect_to event_path(event_id), notice: "Invalid user name"
+      redirect_to event_path(event_id), notice: 'Invalid user name'
     end
   end
+
   private
+
   def inv_params
     params.permit(:name)
   end
-
 end

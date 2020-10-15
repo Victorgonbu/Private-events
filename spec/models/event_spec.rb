@@ -1,27 +1,27 @@
 require 'rails_helper'
 
 RSpec.describe Event do
-  let(:creator) {
-    User.create(name: "Victor", email: "victor@victor.com")
-  }
-  let(:upEvent) {
-    described_class.create(name: "event", location: "here", date: "18/10/2020", creator_id: creator.id )
-  }
-  let(:pastEvent) {
-    described_class.create(name: "event 2", location: "21 house", date: "02/10/2020", creator_id: creator.id)
-  }
+  let(:creator) do
+    User.create(name: 'Victor', email: 'victor@victor.com')
+  end
+  let(:upEvent) do
+    described_class.create(name: 'event', location: 'here', date: '18/10/2020', creator_id: creator.id)
+  end
+  let(:pastEvent) do
+    described_class.create(name: 'event 2', location: '21 house', date: '02/10/2020', creator_id: creator.id)
+  end
 
   describe 'associations' do
-    it' should have many invitations' do
+    it ' should have many invitations' do
       event = Event.reflect_on_association(:invitations)
       expect(event.macro).to eq(:has_many)
     end
-    it' should belongs to creator' do
+    it ' should belongs to creator' do
       event = Event.reflect_on_association(:creator)
       expect(event.macro).to eq(:belongs_to)
     end
     it 'should have many attendees' do
-      event= Event.reflect_on_association(:attendees)
+      event = Event.reflect_on_association(:attendees)
       expect(event.macro).to eql(:has_many)
     end
   end
@@ -39,5 +39,4 @@ RSpec.describe Event do
       )
     end
   end
-
 end

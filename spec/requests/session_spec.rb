@@ -1,15 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe 'sessions requests' do
-  let(:user_params) { {
-    user: {
-      name: 'victor',
-      email: 'victor@victor.com'
+  let(:user_params) do
+    {
+      user: {
+        name: 'victor',
+        email: 'victor@victor.com'
+      }
     }
-  }
-  }
+  end
   let(:sign_up) do
-    post '/users', :params => user_params
+    post '/users', params: user_params
   end
 
   describe 'POST /new' do
@@ -17,7 +18,6 @@ RSpec.describe 'sessions requests' do
       get '/sessions/new'
       expect(response.body).to include('Log in')
       expect(response).to have_http_status(200)
-
     end
   end
 
@@ -27,7 +27,7 @@ RSpec.describe 'sessions requests' do
       name_params = {
         name: 'victor'
       }
-      post '/sessions', :params => name_params
+      post '/sessions', params: name_params
       expect(response).to have_http_status(302)
     end
   end

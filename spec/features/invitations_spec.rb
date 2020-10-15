@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Invitations Features' do
   let(:sign_up) do
-    visit("/")
+    visit('/')
     click_link('Sign up')
     fill_in('Name', with: 'Shaqri')
     fill_in('Email', with: 'Shaqri@hotmail.com')
@@ -39,7 +39,7 @@ RSpec.describe 'Invitations Features' do
       click_link('Details')
       fill_in('Guest name', with: 'Victor')
       click_button('Invite')
-      expect(page).to have_content("Invalid user name")
+      expect(page).to have_content('Invalid user name')
     end
   end
 end

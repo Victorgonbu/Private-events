@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Sessions Features' do
   let(:sign_up_and_log) do
-    visit("/")
+    visit('/')
     click_link('Sign up')
     fill_in('Name', with: 'Shaqri')
     fill_in('Email', with: 'Shaqri@hotmail.com')

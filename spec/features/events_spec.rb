@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Events Features' do
   let(:log_and_create_event) do
-    visit("/")
+    visit('/')
     click_link('Sign up')
     fill_in('Name', with: 'Shaqri')
     fill_in('Email', with: 'Shaqri@hotmail.com')
@@ -19,10 +19,10 @@ RSpec.describe 'Events Features' do
 
   describe 'Viewing the index' do
     it 'lists all events' do
-      User.create(name: "Victor", email: "victor@victor.com")
-      Event.create(name: "event", location: "here", date: "02/10/2020", creator_id: User.first.id)
-      Event.create(name: "event 2", location: "here 2", date: "20/10/2020", creator_id: User.first.id)
-      visit("/")
+      User.create(name: 'Victor', email: 'victor@victor.com')
+      Event.create(name: 'event', location: 'here', date: '02/10/2020', creator_id: User.first.id)
+      Event.create(name: 'event 2', location: 'here 2', date: '20/10/2020', creator_id: User.first.id)
+      visit('/')
       expect(page).to have_content('event')
       expect(page).to have_content('event 2')
     end
@@ -34,7 +34,6 @@ RSpec.describe 'Events Features' do
         log_and_create_event
         expect(page).to have_content('Event created')
       end
-
     end
     describe 'when not logged in' do
       it 'notify the user must me logged in' do
@@ -42,7 +41,6 @@ RSpec.describe 'Events Features' do
         expect(page).to have_content('You must be logged in to create a new event')
       end
     end
-
   end
 
   describe 'Displaying event details' do

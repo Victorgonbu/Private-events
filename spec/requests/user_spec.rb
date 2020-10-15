@@ -1,13 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe 'User requests' do
-  let(:user_params) { {
-    user: {
-      name: 'victor',
-      email: 'victor@victor.com'
+  let(:user_params) do
+    {
+      user: {
+        name: 'victor',
+        email: 'victor@victor.com'
+      }
     }
-  }
-  }
+  end
   describe 'GET /new' do
     it 'returns status message and correct body response' do
       get('/users/new')
@@ -18,7 +19,7 @@ RSpec.describe 'User requests' do
 
   describe 'POST /create' do
     it 'create a user with valid attributes' do
-      post '/users', :params => user_params
+      post '/users', params: user_params
       expect(response).to have_http_status(302)
     end
   end
@@ -28,8 +29,8 @@ RSpec.describe 'User requests' do
       name_params = {
         name: 'victor'
       }
-      post '/users', :params => user_params
-      post '/sessions', :params => name_params
+      post '/users', params: user_params
+      post '/sessions', params: name_params
       get '/users/1'
       expect(response).to have_http_status(200)
     end

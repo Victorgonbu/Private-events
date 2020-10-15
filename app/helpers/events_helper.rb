@@ -1,7 +1,5 @@
 module EventsHelper
   def owner_invite
-    if @event.creator == current_user
-      render "invitations/new", :locals => {:item => @event}
-    end
+    render 'invitations/new', locals: { item: @event } if @event.creator == current_user
   end
-  end
+end

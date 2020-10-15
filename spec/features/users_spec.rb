@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Users Features' do
   let(:sign_up) do
-    visit("/")
+    visit('/')
     click_link('Sign up')
     fill_in('Name', with: 'Shaqri')
     fill_in('Email', with: 'Shaqri@hotmail.com')
@@ -18,8 +18,8 @@ RSpec.describe 'Users Features' do
   let(:create_events_and_invite) do
     Event.create(name: 'upcomming event', location: 'My house', date: '20/10/2020', creator_id: User.first.id)
     Event.create(name: 'new event', location: 'john house', date: '02/10/2020', creator_id: User.first.id)
-    Invitation.create(event_id: Event.first.id, attendee_id: User.first.id )
-    Invitation.create(event_id: Event.last.id, attendee_id: User.first.id )
+    Invitation.create(event_id: Event.first.id, attendee_id: User.first.id)
+    Invitation.create(event_id: Event.last.id, attendee_id: User.first.id)
   end
 
   describe 'creates a new user' do
