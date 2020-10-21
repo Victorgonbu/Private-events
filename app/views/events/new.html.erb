@@ -2,17 +2,28 @@
   <h1>Create event</h1>
 
   <%= form_for @event, class: "form" do |e| %>
+    <% if @event.errors.any? %>
+    <div class="errors">
+      <% @event.errors.full_messages.each do |error| %>
+       <p> <%= error %></p>
+      <% end %>
+    </div>
+    <% end %>
     <div class="field">
       <%= e.label :name %>
-      <%= e.text_field :name %>
+      <%= e.text_field :name, class: "input" %>
+    </div>
+    <div class="field">
+      <%= e.label :description %>
+      <%= e.text_area :description, class: "input no-resize" %>
     </div>
     <div class="field">
       <%= e.label :location %>
-      <%= e.text_field :location %>
+      <%= e.text_field :location, class: "input "%>
     </div>
     <div class="field">
       <%= e.label :date %>
-      <%= e.date_field :date %>
+      <%= e.date_field :date, class: "input" %>
     </div>
     <div class="field">
       <%= e.submit "Create event", class: "submit" %>
