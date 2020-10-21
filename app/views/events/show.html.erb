@@ -1,3 +1,5 @@
+<div class="flex">
+
 
 <div class="all-events">
   <% if user_logged_in? %>
@@ -23,26 +25,28 @@
     </ul>
   </div>
 
- <% if @event.attendees.any? %>
   <div class="event-item">
-   <h2 class="attendee-title">Attendee list</h2>
 
-    <ul class="attendee-list">
-      <% @event.attendees.each do |attendee|%>
-
-      <li class="attendee"> <%= attendee.name %> </li>
-
-      <% end %>
-
-    </ul>
+  <%= owner_invite %>
 
   </div>
-  <% end %>
+
 
 </div>
 
-<div class="Invitations">
+<% if @event.attendees.any? %>
+ <div class="event-item attendee-section">
+  <h2 class="attendee-title">Attendee list</h2>
 
-<%= owner_invite %>
+   <ul class="attendee-list">
+     <% @event.attendees.each do |attendee|%>
 
+     <li class="attendee"> <%= attendee.name %> </li>
+
+     <% end %>
+
+   </ul>
+
+ </div>
+ <% end %>
 </div>

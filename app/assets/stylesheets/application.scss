@@ -177,11 +177,17 @@ a {
   }
 }
 
+.attendee-section {
+  padding: 2em;
+}
+
 .invitation {
   padding-top: 0;
-  width: 50%;
+  width: 100%;
   text-align: center;
-
+  form {
+    width: 35%;
+  }
   h1 {
     padding-top: 0;
   }
