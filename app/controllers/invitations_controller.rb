@@ -4,24 +4,21 @@ class InvitationsController < ApplicationController
   end
 
   def create
-    user = User.find_by(inv_params)
-    event_id = cookies[:event_id]
-    cookies[:event_id] = nil
+    user = User.find_by(name: inv_params[:name])
+    event_id = inv_params[:event_id]
+
     if user
-      @invitation = Invitation.new
-      @invitation.event_id = event_id
-      @invitation.attendee_id = user.id
-      @invitation.save
+      @invitation = Invitation.create(event_id: event_id, attendee_id: user.id)
       redirect_to event_path(event_id), notice: "#{user.name} was invited!"
 
     else
-      redirect_to event_path(event_id), notice: 'Invalid user name'
+      redirect_to event_path(event_id), alert: 'Invalid user name'
     end
   end
 
   private
 
   def inv_params
-    params.permit(:name)
+    params.permit(:name, :event_id)
   end
 end
