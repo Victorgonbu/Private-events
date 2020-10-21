@@ -4,7 +4,7 @@ class InvitationsController < ApplicationController
   end
 
   def create
-    user = User.find_by(name: inv_params[:name])
+    user = User.find(inv_params[:user_id])
     event_id = inv_params[:event_id]
 
     if user
@@ -19,6 +19,6 @@ class InvitationsController < ApplicationController
   private
 
   def inv_params
-    params.permit(:name, :event_id)
+    params.permit(:user_id, :event_id)
   end
 end

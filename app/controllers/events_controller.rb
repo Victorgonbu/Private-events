@@ -25,6 +25,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @user_options = User.all.map{ |u| [ u.name, u.id ] }
   end
 
   private

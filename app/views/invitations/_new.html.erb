@@ -2,10 +2,10 @@
 
   <h1>Invite</h1>
 
-  <%= form_tag("/invitations/create", method: :post) do %>
+  <%= form_with(url: "/invitations/create", method: "post", local: true) do %>
     <%= hidden_field_tag :event_id, @event.id %>
     <div class="field">
-      <%= text_field_tag :name, nil, placeholder: "Guest name", class: "input" %>
+      <%= select_tag(:user_id, options_for_select(@user_options), class: "input") %>
     </div>
     <div class="field">
       <%= submit_tag "Invite", class: "submit" %>
