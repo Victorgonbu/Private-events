@@ -1,8 +1,10 @@
 class User < ApplicationRecord
+  REGEX_PATTERN = /[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\z/
   has_many :events, foreign_key: :creator_id
   has_many :invitations, foreign_key: :attendee_id
   has_many :attended_events, through: :invitations, source: :event
-  validates :email, :name, uniqueness: true, presence: true
+  validates :name, uniqueness: true, length: { minimum: 5, maximum: 15 }
+  validates :email, uniqueness: { case_sensitive: false }, length: { minimum: 4, maximum: 254 }, format: { with: REGEX_PATTERN, message: "invalid" }
 
   def upcomming_events
     @upcomming = attended_events.where('date >= ? ', Date.today)
