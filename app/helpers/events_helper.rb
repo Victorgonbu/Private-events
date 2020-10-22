@@ -1,24 +1,18 @@
 module EventsHelper
-
   def owner_invite
     render 'invitations/new' if @event.creator == current_user
   end
 
   def display_upcomming_h1
-    if Event.upcomming.any?
-      content_tag(:h1, "Upcomming Events")
-    end
-
+    content_tag(:h1, 'Upcomming Events') if Event.upcomming.any?
   end
 
   def display_prev_h1
-    if Event.past.any?
-      content_tag(:h1, "Past Events")
-    end
+    content_tag(:h1, 'Past Events') if Event.past.any?
   end
 
   def display_all_events(events)
-      render 'allevents' if events.any?
+    render 'allevents' if events.any?
   end
 
   def display_back_arrow
@@ -28,5 +22,4 @@ module EventsHelper
   def display_attendees(event)
     render 'attendee_list' if event.attendees.any?
   end
-
 end

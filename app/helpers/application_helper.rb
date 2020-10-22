@@ -12,7 +12,7 @@ module ApplicationHelper
   end
 
   def display_errors_partial(model)
-    render '/events/errors', model: model  if model.errors.any?
+    render '/events/errors', model: model if model.errors.any?
   end
 
   def user_navbar
@@ -22,5 +22,4 @@ module ApplicationHelper
       render '/layouts/nav/unlogged_user_nav'
     end
   end
-
 end
