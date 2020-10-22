@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'invitations/new'
-  post 'invitations/create'
+  get 'invitations/new', as: 'new_invitation'
+  post 'invitations/create', as: 'create_invitation'
   root to: 'events#index'
-  get 'sessions/destroy'
+  get 'sessions/destroy', as: 'destroy_session'
   resources :sessions, only: [:new, :create]
   resources :events, only: [:new, :create, :show, :index]
   resources :users, only: [:new, :create, :show]
