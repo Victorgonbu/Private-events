@@ -1,0 +1,7 @@
+<li>
+  <p>Event: <span> <%= event.name %> </span></p>
+  <p>Date: <span> <%= event.date%> </span></p>
+  <%= link_to event_path(event) do %>
+  <p class="arrow"><span>Details</span> <i class="fas fa-caret-right"></i></p>
+  <% end %>
+</li>

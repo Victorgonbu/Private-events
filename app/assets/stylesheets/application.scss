@@ -1,0 +1,297 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.event-name {
+  a {
+    color: #404040;
+  }
+
+  text-transform: capitalize;
+}
+
+.navbar {
+  a {
+    color: white;
+    transition: color 100ms;
+
+    &:hover {
+      color: #534439;
+    }
+  }
+
+  background: #baa89b;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7em 1em;
+
+  .navbar-item {
+    display: flex;
+
+    .home {
+      a {
+        color: #534439;
+        font-weight: 500;
+      }
+
+      font-size: 1.5em;
+      transition: none;
+
+      &:hover {
+        border: 0;
+      }
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      padding: 0 1em;
+      border: 1px solid #baa89b;
+      border-radius: 5px;
+      transition: border 100ms;
+    }
+
+    .item:hover {
+      border: 2px solid #baa89b;
+    }
+
+    .item:first-child {
+      margin-right: 1em;
+      border-bottom: 1px solid #ef9648;
+
+      a {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #ef9648;
+      }
+    }
+  }
+}
+
+.field_with_errors {
+  input {
+    border: 1px solid #c84d4f;
+  }
+}
+
+.form-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4em;
+
+  h1 {
+    font-size: 2em;
+    padding: 1em;
+  }
+
+  form {
+    width: 20%;
+    padding: 1em;
+
+    .field {
+      padding: 0.5em 0;
+    }
+
+    .no-resize {
+      resize: none;
+    }
+
+    .submit {
+      height: 2.5em;
+      width: 100%;
+      border: 1px solid #ef9648;
+      font-weight: 700;
+      color: white;
+      background: #ef9648;
+      transition: border 50ms;
+
+      &:hover {
+        border-radius: 5px;
+        border: 2px solid white;
+        border-bottom: 2px solid #c2712b;
+      }
+    }
+
+    label {
+      display: block;
+    }
+
+    .input {
+      padding: 7px 4px;
+      width: calc(100% - 1em);
+      border: 1px solid #d9d9d9;
+      border-radius: 2px;
+    }
+  }
+}
+
+.event-item {
+  .attendee-title {
+    color: #ef9648;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+
+  .attendee-list {
+    .attendee {
+      margin: 0;
+      padding: 0.5em 0.2em;
+      border-left: 0;
+      transition: background 150ms, padding 200ms;
+
+      &:hover {
+        background: #fdf5e6;
+        padding: 0.5em;
+        border-top: 1px solid #eae6ca;
+      }
+    }
+  }
+}
+
+.attendee-section {
+  padding: 2em;
+}
+
+.invitation {
+  padding-top: 0;
+  width: 100%;
+  text-align: center;
+
+  form {
+    width: 35%;
+  }
+
+  h1 {
+    padding-top: 0;
+  }
+}
+
+.errors {
+  p {
+    font-size: 0.8em;
+    padding: 0.5em 0;
+  }
+}
+
+.all-events {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+  position: relative;
+
+  .back {
+    position: absolute;
+    top: 2em;
+    left: 1.5em;
+    font-size: 1.5em;
+
+    i {
+      color: black;
+      transition: color 200ms;
+
+      &:hover {
+        color: #ef9648;
+      }
+    }
+  }
+
+  .event-item {
+    width: 49%;
+
+    h1 {
+      font-size: 1.6em;
+      text-align: center;
+      padding: 1em 0;
+      text-transform: capitalize;
+    }
+
+    li {
+      position: relative;
+      border: 1px solid #dfe0df;
+      border-top: 1px solid white;
+      margin: 1em 0;
+      transition: border 200ms;
+
+      &:hover {
+        border-top: 1px solid #ef9648;
+      }
+
+      .arrow {
+        position: absolute;
+        bottom: 0.4em;
+        right: 0.5em;
+        font-size: 1em;
+        color: #534439;
+
+        i:hover {
+          color: #ef9648;
+        }
+      }
+
+      .other-options {
+        font-size: 0.9em;
+        display: flex;
+      }
+
+      p {
+        padding: 0.8em 0.5em;
+        color: #404040;
+        font-size: 1.2em;
+
+        span {
+          font-size: 0.9em;
+          text-transform: capitalize;
+          color: #696969;
+        }
+      }
+    }
+  }
+}
+
+.host {
+  justify-content: center;
+}
+
+.alert,
+.notice {
+  text-align: center;
+  padding: 0.2em 0;
+  color: white;
+}
+
+.notice {
+  background: #90dd99;
+}
+
+.alert {
+  background: #c84d4f;
+}

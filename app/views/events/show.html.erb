@@ -1,0 +1,27 @@
+<div class="all-events">
+  <%= display_back_arrow %>
+
+  <div class="event-item">
+    <h1>
+    <%= @event.name %>
+    </h1>
+
+    <ul class="event-details">
+      <li>
+        <p><span>Description: </span> <%= @event.description %></p>
+        <p><span>Location: </span> <%= @event.location %></p>
+        <p><span>date: </span> <%= @event.date %> </p>
+        <p><span>host: </span> <%= @event.creator.name %> </p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="event-item">
+
+  <%= owner_invite %>
+
+  </div>
+
+
+</div>
+<%= display_attendees(@event) %>
