@@ -1,0 +1,17 @@
+<div class="all-events host">
+  <div class="event-item">
+    <h1>Hosted Events</h1>
+    <ul class = "event-list">
+      <% current_user.events.each do |event| %>
+        <li>
+          <p>Event: <span> <%= event.name %> </span></p>
+          <p>Location: <span> <%= event.location %> </span></p>
+          <p>Date: <span> <%= event.date %> </span></p>
+          <%= link_to event_path(event) do %>
+          <p class="arrow"><span>Details</span> <i class="fas fa-caret-right"></i></p>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  </div>
