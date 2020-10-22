@@ -1,0 +1,21 @@
+<div class="form-wrap">
+
+  <h1>Sign up</h1>
+
+
+  <%= form_with model: @user, local: true, class: "form" do |u|%>
+    <%= display_errors_partial(@user) %>
+    <div class="field">
+      <%= u.label :name %>
+      <%= u.text_field :name, class: "input" %>
+    </div>
+    <div class="field">
+      <%= u.label :email %>
+      <%= u.text_field :email, class: "input" %>
+    </div>
+    <div class="field">
+      <%= u.submit "Create account", class: "submit" %>
+    </div>
+
+  <% end %>
+</div>
