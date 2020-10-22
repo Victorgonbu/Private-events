@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: 'events#index'
   get 'sessions/destroy', as: 'destroy_session'
   resources :sessions, only: [:new, :create]
-  resources :events, only: [:new, :create, :show, :index]
+  resources :events, only: [:new, :create, :show, :index, :edit, :update, :destroy]
   resources :users, only: [:new, :create, :show]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

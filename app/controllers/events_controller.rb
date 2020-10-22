@@ -28,6 +28,25 @@ class EventsController < ApplicationController
     @user_options = User.all.map { |u| [u.name, u.id] }
   end
 
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      redirect_to user_path(current_user), notice: 'Event updated'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to user_path(current_user), notice: 'Event successfully deleted'
+  end
+
   private
 
   def event_params
