@@ -17,14 +17,15 @@ RSpec.describe 'invitation requests' do
     post '/sessions', params: name_params
   end
   let(:create_event) do
-    Event.create(name: 'victor', location: 'here', date: '18/10/2020', creator_id: User.first.id)
+    Event.create(name: 'victor-event', description: 'event description', location: 'event location', date: '18/10/2020', creator_id: User.first.id)
   end
   describe 'POST /create' do
     it 'invites a existing user' do
       sign_up_and_log
       create_event
       invitation_params = {
-        name: 'victor'
+        user_id: 1,
+        event_id: 1
       }
       get('/events/1')
       post '/invitations/create', params: invitation_params

@@ -5,10 +5,10 @@ RSpec.describe User do
     User.new(name: 'victor', email: 'elpana@hotmail.com')
   end
   let(:upEvent) do
-    Event.create(name: 'upcomming event', location: 'park', date: '20/10/2020', creator_id: new_user.id)
+    Event.create(name: 'upcomming event', description: 'event description', location: 'park house', date: '20/10/2021', creator_id: new_user.id)
   end
   let(:pastEvent) do
-    Event.create(name: 'past event', location: 'park 2', date: '02/10/2020', creator_id: new_user.id)
+    Event.create(name: 'past event', description: 'event description', location: 'park 2', date: '02/10/2020', creator_id: new_user.id)
   end
   describe 'associations' do
     it 'should have many events' do

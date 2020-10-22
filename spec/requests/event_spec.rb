@@ -20,7 +20,8 @@ RSpec.describe 'Event Requests' do
   let(:event_params) do
     {
       event: {
-        name: 'event',
+        name: 'event name',
+        description: 'event description',
         location: 'my house',
         date: '20/10/2020',
         creator_id: User.first.id

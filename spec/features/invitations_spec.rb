@@ -18,8 +18,9 @@ RSpec.describe 'Invitations Features' do
   let(:create_event) do
     sign_up_and_log
     click_link('Create new Event')
-    fill_in('Name', with: 'Event')
-    fill_in('Location', with: 'here')
+    fill_in('Name', with: 'Event time')
+    fill_in('Description', with: 'Event description')
+    fill_in('Location', with: 'Event location')
     fill_in('Date', with: '20/10/2020')
     click_button('Create event')
   end
@@ -27,19 +28,12 @@ RSpec.describe 'Invitations Features' do
   describe 'invite a existing user to an existing event' do
     it 'displays a user has been invited sucessfully' do
       create_event
-      expect(current_path).to have_content('/')
+      User.create(name: 'victor', email: 'victor@victor.com')
+      visit("/users/#{User.first.id}")
       click_link('Details')
-      fill_in('Guest name', with: 'Shaqri')
+      select('victor', from: 'selectbox').select_option
       click_button('Invite')
       expect(page).to have_content("#{Event.first.attendees.first.name} was invited!")
-    end
-    it 'displays a user is invalid to invite' do
-      create_event
-      expect(current_path).to have_content('/')
-      click_link('Details')
-      fill_in('Guest name', with: 'Victor')
-      click_button('Invite')
-      expect(page).to have_content('Invalid user name')
     end
   end
 end

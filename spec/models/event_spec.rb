@@ -5,10 +5,10 @@ RSpec.describe Event do
     User.create(name: 'Victor', email: 'victor@victor.com')
   end
   let(:upEvent) do
-    described_class.create(name: 'event', location: 'here', date: '18/10/2020', creator_id: creator.id)
+    described_class.create(name: 'event name', description: 'event description', location: 'event location', date: '18/10/2021', creator_id: creator.id)
   end
   let(:pastEvent) do
-    described_class.create(name: 'event 2', location: '21 house', date: '02/10/2020', creator_id: creator.id)
+    described_class.create(name: 'event name 2', description: 'event description', location: '21 house location', date: '02/10/2020', creator_id: creator.id)
   end
 
   describe 'associations' do

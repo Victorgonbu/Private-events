@@ -16,8 +16,8 @@ RSpec.describe 'Users Features' do
   end
 
   let(:create_events_and_invite) do
-    Event.create(name: 'upcomming event', location: 'My house', date: '20/10/2020', creator_id: User.first.id)
-    Event.create(name: 'new event', location: 'john house', date: '02/10/2020', creator_id: User.first.id)
+    Event.create(name: 'upcomming event', description: 'event description', location: 'My house', date: '20/10/2021', creator_id: User.first.id)
+    Event.create(name: 'new event', description: 'event description', location: 'john house', date: '02/10/2020', creator_id: User.first.id)
     Invitation.create(event_id: Event.first.id, attendee_id: User.first.id)
     Invitation.create(event_id: Event.last.id, attendee_id: User.first.id)
   end

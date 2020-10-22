@@ -11,8 +11,9 @@ RSpec.describe 'Events Features' do
     fill_in('Name', with: 'Shaqri')
     click_button('log in')
     click_link('Create new Event')
-    fill_in('Name', with: 'Event')
-    fill_in('Location', with: 'here')
+    fill_in('Name', with: 'Event name')
+    fill_in('event_description', with: 'Event description')
+    fill_in('Location', with: 'Event location')
     fill_in('Date', with: '20/10/2020')
     click_button('Create event')
   end
@@ -20,11 +21,11 @@ RSpec.describe 'Events Features' do
   describe 'Viewing the index' do
     it 'lists all events' do
       User.create(name: 'Victor', email: 'victor@victor.com')
-      Event.create(name: 'event', location: 'here', date: '02/10/2020', creator_id: User.first.id)
-      Event.create(name: 'event 2', location: 'here 2', date: '20/10/2020', creator_id: User.first.id)
+      Event.create(name: 'event name', description: 'event description', location: 'event location', date: '02/10/2020', creator_id: User.first.id)
+      Event.create(name: 'event name 2', description: 'event description', location: 'event description', date: '20/10/2020', creator_id: User.first.id)
       visit('/')
-      expect(page).to have_content('event')
-      expect(page).to have_content('event 2')
+      expect(page).to have_content('event name')
+      expect(page).to have_content('event name 2')
     end
   end
 
