@@ -21,5 +21,12 @@ module EventsHelper
       render 'allevents' if events.any?
   end
 
+  def display_back_arrow
+    render 'back' if user_logged_in?
+  end
+
+  def display_attendees(event)
+    render 'attendee_list' if event.attendees.any?
+  end
 
 end

@@ -1,14 +1,5 @@
-<div class="flex">
-
-
 <div class="all-events">
-  <% if user_logged_in? %>
-  <div class="back">
-    <%= link_to user_path(current_user) do %>
-      <p><i class="fas fa-arrow-left"></i></p>
-    <% end %>
-  </div>
-  <% end %>
+  <%= display_back_arrow %>
 
   <div class="event-item">
     <h1>
@@ -33,20 +24,4 @@
 
 
 </div>
-
-<% if @event.attendees.any? %>
- <div class="event-item attendee-section">
-  <h2 class="attendee-title">Attendee list</h2>
-
-   <ul class="attendee-list">
-     <% @event.attendees.each do |attendee|%>
-
-     <li class="attendee"> <%= attendee.name %> </li>
-
-     <% end %>
-
-   </ul>
-
- </div>
- <% end %>
-</div>
+<%= display_attendees(@event) %>

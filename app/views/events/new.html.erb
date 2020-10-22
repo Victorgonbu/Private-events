@@ -2,13 +2,8 @@
   <h1>Create event</h1>
 
   <%= form_for @event, class: "form" do |e| %>
-    <% if @event.errors.any? %>
-    <div class="errors">
-      <% @event.errors.full_messages.each do |error| %>
-       <p> <%= error %></p>
-      <% end %>
-    </div>
-    <% end %>
+    <%= display_errors_partial(@event) %>
+
     <div class="field">
       <%= e.label :name %>
       <%= e.text_field :name, class: "input" %>

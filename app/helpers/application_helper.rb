@@ -11,4 +11,8 @@ module ApplicationHelper
     end
   end
 
+  def display_errors_partial(model)
+    render '/events/errors', model: model  if model.errors.any?
+  end
+
 end
