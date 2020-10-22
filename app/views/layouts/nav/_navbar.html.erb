@@ -4,32 +4,7 @@
       <%= link_to "Private Events", root_path %>
     </div>
   </div>
-  <% if user_logged_in? %>
-  <div class="navbar-item">
-    <div class="item new">
-      <%= link_to "Create new Event", new_event_path %>
-    </div>
-    <div class="item">
-      <%= link_to "Home", root_path %>
-    </div>
-    <div class="item">
-      <%= link_to current_user.name, current_user %>
-    </div>
-    <div class="item">
-      <%= link_to "Log out", sessions_destroy_path %>
-    </div>
-  </div>
-    <% else %>
-  <div class="navbar-item">
-    <div class="item">
-      <%= link_to "Log in", new_session_path %>
-    </div>
-    <div class="item">
-      <%= link_to "Sign up", new_user_path %>
-  </div>
 
-  </div>
-
-  <% end %>
+<%= user_navbar %>
 
 </nav>

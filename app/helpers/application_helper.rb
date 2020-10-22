@@ -15,4 +15,12 @@ module ApplicationHelper
     render '/events/errors', model: model  if model.errors.any?
   end
 
+  def user_navbar
+    if user_logged_in?
+      render '/layouts/nav/logged_user_nav'
+    else
+      render '/layouts/nav/unlogged_user_nav'
+    end
+  end
+
 end

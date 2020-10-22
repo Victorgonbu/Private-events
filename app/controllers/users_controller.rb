@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @hosted_events = current_user.events
     @upcomming_events = current_user.upcomming_events
     @prev_events = current_user.prev_events
   end

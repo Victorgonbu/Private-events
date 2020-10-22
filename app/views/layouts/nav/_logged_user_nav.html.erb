@@ -1,0 +1,14 @@
+<div class="navbar-item">
+  <div class="item new">
+    <%= link_to "Create new Event", new_event_path %>
+  </div>
+  <div class="item">
+    <%= link_to "Home", root_path %>
+  </div>
+  <div class="item">
+    <%= link_to current_user.name, current_user %>
+  </div>
+  <div class="item">
+    <%= link_to "Log out", sessions_destroy_path %>
+  </div>
+</div>

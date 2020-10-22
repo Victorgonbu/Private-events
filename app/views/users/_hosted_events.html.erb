@@ -2,7 +2,7 @@
   <div class="event-item">
     <h1>Hosted Events</h1>
     <ul class = "event-list">
-      <% current_user.events.each do |event| %>
+      <% @hosted_events.each do |event| %>
         <li>
           <p>Event: <span> <%= event.name %> </span></p>
           <p>Location: <span> <%= event.location %> </span></p>
