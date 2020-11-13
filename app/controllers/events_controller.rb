@@ -15,7 +15,8 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
 
     if @event.save
-      @event.save
+      EventMailer.with(event: @event).event_created.deliver_later
+
       redirect_to current_user, notice: 'Event created'
     else
       flash.now[:alert] = 'Invalid event'
