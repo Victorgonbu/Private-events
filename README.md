@@ -1,5 +1,9 @@
 # Private events project
 
+![Private events preview show](/app/assets/images/PRIVATE_EVENTS.png)  
+
+![Private events preview index](/app/assets/images/PRIVATE-EVENTS-2.png)  
+
 ## About the project
 
 This is a private events website where you can create your own account, log in, create events and invite who ever is registered in the website. For this project i practiced and get familiar with Rails Associations and Active Record queries.
